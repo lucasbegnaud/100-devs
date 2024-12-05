@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    background-color: rgb(190, 238, 255);
+    position: relative;
+    font-weight: bold;
+}
+img{
+    height: 200px;
+}
+#abilities{
+    padding-bottom: 20px;
+}
+aside{
+    float: left;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
