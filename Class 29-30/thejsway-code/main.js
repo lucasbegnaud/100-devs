@@ -88,29 +88,28 @@ class Character {
 
 //Account list//
 class Account {
-    constructor(name){
-        this.name = name;
-        this.balance = 0;
-    }
-    credit(value){
-        this.balance += value;
-    }
-    describe(){
-        return `owner: ${this.name}, balance: ${this.balance}`
-    }
+  constructor(name) {
+      this.name = name;
+      this.balance = 0;
+  }
+  credit(value) {
+      this.balance += value;
+  }
+  describe() {
+      return `owner: ${this.name}, balance: ${this.balance}`;
+  }
 }
-const seansAccount = new Account('Sean');
-const bradsAccount = new Account('Brad');
-const georgesAccount = new Account('Georges');
 
-console.log(seansAccount.describe())
-seansAccount.credit(1000)
-console.log(seansAccount.describe())
+let arrOfAccountOwners = ['Sean', 'Brad', 'Georges'];
 
-console.log(bradsAccount.describe())
-bradsAccount.credit(2000)
-console.log(bradsAccount.describe())
+function makeAccounts(arr) {
+  let accounts = [];
+  for (let i = 0; i < arr.length; i++) {
+      accounts.push(new Account(arr[i]));
+  }
+  return accounts;
+}
 
-console.log(georgesAccount.describe())
-georgesAccount.credit(3000)
-console.log(georgesAccount.describe())
+makeAccounts(arrOfAccountOwners).forEach(account => {
+  console.log(account.describe());
+});
